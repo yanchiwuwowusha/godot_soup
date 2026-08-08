@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cqlhlg7c55w6a"]
+
+[ext_resource type="PackedScene" uid="uid://cjaub8a0nm2ch" path="res://scenes/ui.tscn" id="1_f6udf"]
+
+[node name="Node2D" type="Node2D" unique_id=1499103041]
+
+[node name="UI" parent="." unique_id=1794217944 instance=ExtResource("1_f6udf")]
+offset_left = 914.3782
+offset_top = 503.14032
+offset_right = 914.3782
+offset_bottom = 503.14032
+metadata/_edit_use_anchors_ = true
