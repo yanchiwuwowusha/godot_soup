@@ -13,6 +13,7 @@ config_version=5
 config/name="soup"
 run/main_scene="uid://cqlhlg7c55w6a"
 config/features=PackedStringArray("4.7", "Forward Plus")
+config/icon="res://Resources/icon.svg"
 
 [display]
 

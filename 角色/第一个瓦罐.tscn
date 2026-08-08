@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bokt4pldwt3ti"]
 
 [ext_resource type="Script" uid="uid://5u230ysgao76" path="res://Scene/PlayerMovement.gd" id="1_wougn"]
-[ext_resource type="Texture2D" uid="uid://2japxelcbvcn" path="res://Resources/序列/1.png" id="2_gi0ng"]
+[ext_resource type="Texture2D" uid="uid://2japxelcbvcn" path="res://assets/序列/1.png" id="2_gi0ng"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1esiv"]
 radius = 9.30929
