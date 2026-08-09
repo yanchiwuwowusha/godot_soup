@@ -1,17 +1,21 @@
 extends CharacterBody2D
-
+#速度与加速度
 @export var acceleration: float = 3000.0
 @export var max_speed: float = 1000.0
 @export var jump_velocity: float = -1000.0
 @export var gravity: float = 2000.0
+#状态   0：瓦罐   1：玻璃罐   2：石锅     3：自热饭盒
 @export var current_stage:int  = 0
+#生命与纯净度
 @export var hp :float= 100.0
 @export var max_hp:float = 100.0
 @export var clarity:float = 100.0
 @export var max_clarity:float = 100.0
 
+
 @onready var hp_label: Label = $CanvasLayer/HPLabel
 @onready var clarity_label: Label = $CanvasLayer/ClarityLabel
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
 
 func _ready() -> void:
@@ -40,10 +44,37 @@ func change_current_stage(a: int) -> void:
 #切换各种形态
 	current_stage = a
 	if a == 0:
-		acceleration = 500.0
+		acceleration = 3000.0
+		max_speed = 1000.0
+		jump_velocity = -1000.0
+		max_hp=100
+		max_clarity=100
+		anim.play("瓦罐")
+		print("瓦罐")
+	if a==1:
+		acceleration = 6000.0
+		max_speed = 2000.0
+		jump_velocity = -2000.0
+		max_hp=50
+		max_clarity=50
+		anim.play("玻璃罐")
+		print("玻璃罐")
+	if a==2:
+		acceleration = 1500.0
 		max_speed = 500.0
-		jump_velocity = -400.0
-		print("形态0")
+		jump_velocity = 0
+		max_hp=200
+		max_clarity=200
+		anim.play("石锅")
+		print("石锅")
+	if a==3:
+		acceleration = 3000.0
+		max_speed = 1000.0
+		jump_velocity = -1000.0
+		max_hp=100
+		max_clarity=100
+		anim.play("自热饭盒")
+		print("自热饭盒")
 
 func change_hp(a:float)->void:
 #更改血量

@@ -1,20 +1,60 @@
 [gd_scene format=3 uid="uid://b87yyiqdeltfr"]
 
 [ext_resource type="Script" uid="uid://b018gsmitdle7" path="res://scenes/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://2japxelcbvcn" path="res://assets/罐子/1.png" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://b6hnrx7l3x0ao" path="res://assets/罐子/四个角色.png" id="2_g2els"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
-radius = 92.0
-height = 262.0
+radius = 88.0
+height = 190.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 144, 97, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 79, 97, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 47, 97, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 0, 97, 47)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvgk3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_onrkg")
+"texture": SubResource("AtlasTexture_qhqgy")
 }],
-"loop": 1,
-"name": &"default",
+"loop": 0,
+"name": &"玻璃罐",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}],
+"loop": 0,
+"name": &"瓦罐",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}],
+"loop": 0,
+"name": &"石锅",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}],
+"loop": 0,
+"name": &"自热饭盒",
 "speed": 5.0
 }]
 
@@ -25,8 +65,10 @@ script = ExtResource("1_g2els")
 shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=907142981]
-position = Vector2(-4, -28)
+position = Vector2(0, -4.000002)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_kvgk3")
+animation = &"瓦罐"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2073023887]
 
