@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m300uprcntuv"
-path="res://.godot/imported/1N.png-3361e4cb522b009bb40183b65509b989.ctex"
+uid="uid://2japxelcbvcn"
+path="res://.godot/imported/1.png-7a20e39a49062b1db39fefabf1a2e2f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sequence/1N.png"
-dest_files=["res://.godot/imported/1N.png-3361e4cb522b009bb40183b65509b989.ctex"]
+source_file="res://assets/罐子/1.png"
+dest_files=["res://.godot/imported/1.png-7a20e39a49062b1db39fefabf1a2e2f4.ctex"]
 
 [params]
 

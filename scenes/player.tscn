@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://b87yyiqdeltfr"]
+
+[ext_resource type="Script" uid="uid://ddpkeqsoghith" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://2japxelcbvcn" path="res://assets/1.png" id="2_onrkg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
+radius = 92.0
+height = 262.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvgk3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_onrkg")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=43300901 groups=["player"]]
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=71378785]
+shape = SubResource("CapsuleShape2D_onrkg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=907142981]
+position = Vector2(-4, -28)
+sprite_frames = SubResource("SpriteFrames_kvgk3")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2073023887]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1410867755]
+
+[node name="HPLabel" type="Label" parent="CanvasLayer" unique_id=2049199406]
+offset_left = -4.0
+offset_top = 125.0
+offset_right = 241.0
+offset_bottom = 224.0
+theme_override_font_sizes/font_size = 50
+text = "HP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClarityLabel" type="Label" parent="CanvasLayer" unique_id=1927889800]
+offset_right = 237.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 50
+text = "Clarity"
+horizontal_alignment = 1
+vertical_alignment = 1
