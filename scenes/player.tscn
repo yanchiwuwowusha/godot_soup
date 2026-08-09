@@ -71,7 +71,6 @@ stage_datas = Array[ExtResource("2_fjrip")]([ExtResource("3_smehm"), ExtResource
 shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=907142981]
-position = Vector2(0, -4.000002)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_kvgk3")
 animation = &"石锅"
