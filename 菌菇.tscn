@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://0gfngyfh1xen"]
+
+[ext_resource type="Script" uid="uid://b0tdebeks030x" path="res://菌菇.gd" id="1_mdxtw"]
+[ext_resource type="Texture2D" uid="uid://drpvsgnix2083" path="res://assets/portrait/乐哥.png" id="2_mdxtw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kvgk3"]
+radius = 427.2856
+
+[node name="Area2D" type="Area2D" unique_id=671155798]
+script = ExtResource("1_mdxtw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1123220965]
+position = Vector2(417, 439)
+shape = SubResource("CircleShape2D_kvgk3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1135552534]
+position = Vector2(377.00018, 393.00006)
+scale = Vector2(1.8454951, 1.8454951)
+texture = ExtResource("2_mdxtw")
