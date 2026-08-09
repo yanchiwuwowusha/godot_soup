@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m300uprcntuv"
-path="res://.godot/imported/1N.png-3361e4cb522b009bb40183b65509b989.ctex"
+uid="uid://drpvsgnix2083"
+path="res://.godot/imported/乐哥.png-4b95256764b62d67ffb45b1a6ef6d752.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sequence/1N.png"
-dest_files=["res://.godot/imported/1N.png-3361e4cb522b009bb40183b65509b989.ctex"]
+source_file="res://assets/portrait/乐哥.png"
+dest_files=["res://.godot/imported/乐哥.png-4b95256764b62d67ffb45b1a6ef6d752.ctex"]
 
 [params]
 

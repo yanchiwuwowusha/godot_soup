@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dvxnid4kojdc"]
+
+[ext_resource type="Script" uid="uid://b7hu7ayqhspny" path="res://辣椒油.gd" id="1_nvyjb"]
+[ext_resource type="Texture2D" uid="uid://ciwcx0t6al2v8" path="res://assets/portrait/蓝调张雪峰.png" id="2_jnhy1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnhy1"]
+size = Vector2(327, 408)
+
+[node name="Area2D" type="Area2D" unique_id=840195242]
+script = ExtResource("1_nvyjb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=468511896]
+position = Vector2(229, 268)
+shape = SubResource("RectangleShape2D_jnhy1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=413469556]
+texture = ExtResource("2_jnhy1")
+centered = false
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

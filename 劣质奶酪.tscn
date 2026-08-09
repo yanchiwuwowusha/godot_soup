@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b7vfwtoaje8n8"]
+
+[ext_resource type="Script" uid="uid://bk4geql1whnpf" path="res://劣质奶酪.gd" id="1_2od1x"]
+[ext_resource type="Texture2D" uid="uid://cgol7jjttaktv" path="res://assets/portrait/穿山甲.png" id="2_2od1x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kvgk3"]
+radius = 427.2856
+
+[node name="Area2D" type="Area2D" unique_id=671155798]
+script = ExtResource("1_2od1x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1123220965]
+position = Vector2(417, 439)
+shape = SubResource("CircleShape2D_kvgk3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1135552534]
+position = Vector2(444, 455.00003)
+scale = Vector2(1.600939, 1.600939)
+texture = ExtResource("2_2od1x")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2041376]
+position = Vector2(444, 455.00003)
+scale = Vector2(1.600939, 1.600939)
+texture = ExtResource("2_2od1x")

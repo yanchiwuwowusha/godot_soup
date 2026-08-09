@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cq8kn2eaeefat"]
+
+[ext_resource type="Texture2D" uid="uid://bei7y37kyrsv8" path="res://assets/icon.svg" id="1_cottq"]
+[ext_resource type="Script" uid="uid://cuepft28vnxm2" path="res://黄豆.gd" id="1_e8fck"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kvgk3"]
+radius = 427.2856
+
+[node name="Area2D" type="Area2D" unique_id=671155798]
+script = ExtResource("1_e8fck")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1123220965]
+position = Vector2(417, 439)
+shape = SubResource("CircleShape2D_kvgk3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1135552534]
+position = Vector2(398, 426)
+scale = Vector2(5.648437, 5.648437)
+texture = ExtResource("1_cottq")
