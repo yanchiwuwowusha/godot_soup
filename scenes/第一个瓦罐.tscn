@@ -21,13 +21,14 @@ normal_texture = SubResource("CompressedTexture2D_bp7ja")
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_sn0t7"]
 gradient = SubResource("Gradient_5m30a")
+fill_from = Vector2(0.31690142, 0.80985916)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=761742917]
 scale = Vector2(0.29489204, 0.29489204)
 script = ExtResource("1_wougn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=795890231]
-position = Vector2(-5.684342e-14, -119)
+position = Vector2(0, -119)
 scale = Vector2(9.130664, -8.029729)
 shape = SubResource("CapsuleShape2D_1esiv")
 
@@ -36,7 +37,7 @@ z_index = -1
 position = Vector2(-3, -146)
 texture = SubResource("CanvasTexture_riqys")
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=910527976]
-position = Vector2(188, -297)
-scale = Vector2(5.200001, 6.24)
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D" unique_id=910527976]
+position = Vector2(178.40408, -144)
+scale = Vector2(5.2000012, 6.2400007)
 texture = SubResource("GradientTexture2D_sn0t7")
