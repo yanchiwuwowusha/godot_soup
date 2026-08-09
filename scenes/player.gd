@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var gravity: float = 2000.0
 #状态   0：瓦罐   1：玻璃罐   2：石锅     3：自热饭盒
 @export var current_stage:int  = 0
+@export var stage_datas: Array[StageData] = []
 #生命与纯净度
 @export var hp :float= 100.0
 @export var max_hp:float = 100.0
@@ -43,38 +44,25 @@ func _physics_process(delta: float) -> void:
 func change_current_stage(a: int) -> void:
 #切换各种形态
 	current_stage = a
-	if a == 0:
-		acceleration = 3000.0
-		max_speed = 1000.0
-		jump_velocity = -1000.0
-		max_hp=100
-		max_clarity=100
-		anim.play("瓦罐")
-		print("瓦罐")
-	if a==1:
-		acceleration = 6000.0
-		max_speed = 2000.0
-		jump_velocity = -2000.0
-		max_hp=50
-		max_clarity=50
-		anim.play("玻璃罐")
-		print("玻璃罐")
-	if a==2:
-		acceleration = 1500.0
-		max_speed = 500.0
-		jump_velocity = 0
-		max_hp=200
-		max_clarity=200
-		anim.play("石锅")
-		print("石锅")
-	if a==3:
-		acceleration = 3000.0
-		max_speed = 1000.0
-		jump_velocity = -1000.0
-		max_hp=100
-		max_clarity=100
-		anim.play("自热饭盒")
-		print("自热饭盒")
+	if a < 0 or a >= stage_datas.size():
+		print("错误：形态索引 %d 超出资源数组范围" % a)
+		return
+
+	var data: StageData = stage_datas[a]
+	acceleration = data.acceleration
+	max_speed = data.max_speed
+	jump_velocity = data.jump_velocity
+	max_hp = data.max_hp
+	max_clarity = data.max_clarity
+
+	# 限制当前 hp/clarity 不超过最大值
+	hp = min(hp, max_hp)
+	clarity = min(clarity, max_clarity)
+
+	if anim and data.anim_name:
+		anim.play(data.anim_name)
+	update_display()
+	print("切换到形态：", data.stage_name)
 
 func change_hp(a:float)->void:
 #更改血量
@@ -88,4 +76,8 @@ func change_clarity(a:float)->void:
 	clarity+=a
 	clarity=min(max_clarity,clarity)
 	clarity=max(0,clarity)
+	clarity_label.text = "Clarity: %d / %d" % [clarity, max_clarity]
+
+func update_display()->void:
+	hp_label.text = "HP: %d / %d" % [hp, max_hp]
 	clarity_label.text = "Clarity: %d / %d" % [clarity, max_clarity]
