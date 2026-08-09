@@ -3,13 +3,16 @@
 [ext_resource type="Script" uid="uid://b3okik43gqjle" path="res://scenes/scene_switch.gd" id="1_hbhjt"]
 [ext_resource type="Texture2D" uid="uid://bei7y37kyrsv8" path="res://assets/icon.svg" id="1_q6r6g"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_q6vxt"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_7rv77"]
+radius = 23.811687
 
 [node name="Area2D" type="Area2D" unique_id=895724147]
 script = ExtResource("1_hbhjt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=725811839]
-shape = SubResource("CircleShape2D_q6vxt")
+shape = SubResource("CircleShape2D_7rv77")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1291434896]
+position = Vector2(3.8146973e-06, 0)
+scale = Vector2(0.38101918, 0.34259975)
 texture = ExtResource("1_q6r6g")
