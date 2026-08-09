@@ -18,12 +18,26 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_bnttg")
 
-[node name="Start" type="Button" parent="." unique_id=617854451]
+[node name="play" type="Button" parent="." unique_id=617854451]
 layout_mode = 2
 size_flags_vertical = 4
-text = "START"
+theme_override_font_sizes/font_size = 75
+text = "PLAY"
 
-[node name="Exit" type="Button" parent="." unique_id=426631333]
+[node name="settings" type="Button" parent="." unique_id=1637022715]
 layout_mode = 2
 size_flags_vertical = 4
-text = "EXIT"
+theme_override_font_sizes/font_size = 75
+text = "SETTINGS"
+
+[node name="credits" type="Button" parent="." unique_id=753915919]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 75
+text = "CREDITS"
+
+[node name="quit" type="Button" parent="." unique_id=426631333]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 75
+text = "QUIT"
