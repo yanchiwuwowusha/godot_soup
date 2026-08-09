@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://drwtcquicu2nd"]
+
+[ext_resource type="Texture2D" uid="uid://bei7y37kyrsv8" path="res://assets/icon.svg" id="1_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://dvxnid4kojdc" path="res://辣椒油.tscn" id="2_tipki"]
+[ext_resource type="PackedScene" uid="uid://cq8kn2eaeefat" path="res://黄豆.tscn" id="3_85g3d"]
+[ext_resource type="PackedScene" uid="uid://0gfngyfh1xen" path="res://菌菇.tscn" id="4_choun"]
+[ext_resource type="PackedScene" uid="uid://b7vfwtoaje8n8" path="res://劣质奶酪.tscn" id="5_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://ccw11xj2qu2kn" path="res://change_stage.tscn" id="6_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://b87yyiqdeltfr" path="res://scenes/player.tscn" id="7_trceg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvgk3"]
+size = Vector2(7439, 2100)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wmwd2"]
+normal = Vector2(-0.004304121, -0.9999907)
+
+[node name="main" type="Node2D" unique_id=1180419787]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1802548472]
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=983559629]
+scale = Vector2(57.859375, 16)
+texture = ExtResource("1_o6xl0")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1473110125]
+position = Vector2(3709.5, 1052)
+shape = SubResource("RectangleShape2D_kvgk3")
+
+[node name="辣椒油" parent="." unique_id=840195242 instance=ExtResource("2_tipki")]
+position = Vector2(961, -477)
+
+[node name="黄豆" parent="." unique_id=671155798 instance=ExtResource("3_85g3d")]
+position = Vector2(1924, -747)
+
+[node name="菌菇" parent="." unique_id=1325057483 instance=ExtResource("4_choun")]
+position = Vector2(3382, -762)
+
+[node name="劣质奶酪" parent="." unique_id=2057732734 instance=ExtResource("5_ya4ey")]
+position = Vector2(4840, -733)
+
+[node name="切换罐子" parent="." unique_id=1942754116 instance=ExtResource("6_eb6dy")]
+position = Vector2(827, -134)
+
+[node name="player" parent="." unique_id=43300901 instance=ExtResource("7_trceg")]
+position = Vector2(310, -325)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1449686519]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=157761961]
+position = Vector2(591, 2274)
+shape = SubResource("WorldBoundaryShape2D_wmwd2")
