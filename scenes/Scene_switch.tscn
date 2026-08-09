@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bjxo421ivvkxj"]
+
+[ext_resource type="Script" uid="uid://b3okik43gqjle" path="res://scenes/scene_switch.gd" id="1_hbhjt"]
+[ext_resource type="Texture2D" uid="uid://bei7y37kyrsv8" path="res://assets/icon.svg" id="1_q6r6g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q6vxt"]
+
+[node name="Area2D" type="Area2D" unique_id=895724147]
+script = ExtResource("1_hbhjt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=725811839]
+shape = SubResource("CircleShape2D_q6vxt")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1291434896]
+texture = ExtResource("1_q6r6g")
