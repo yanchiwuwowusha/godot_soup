@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="StageData" format=3 uid="uid://hyrnowrd62at"]
+
+[ext_resource type="Script" uid="uid://d25ebrvxhjqdf" path="res://game/systems/stage_data.gd" id="1_gr3ir"]
+
+[resource]
+script = ExtResource("1_gr3ir")
+stage_name = "玻璃罐"
+acceleration = 6000.0
+max_speed = 2000.0
+jump_velocity = -2000.0
+max_hp = 50.0
+max_clarity = 50.0
+anim_name = "玻璃罐"
+metadata/_custom_type_script = "uid://d25ebrvxhjqdf"

@@ -1,32 +1,79 @@
 [gd_scene format=3 uid="uid://b87yyiqdeltfr"]
 
 [ext_resource type="Script" uid="uid://b018gsmitdle7" path="res://scenes/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://2japxelcbvcn" path="res://assets/罐子/1.png" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://d25ebrvxhjqdf" path="res://game/systems/stage_data.gd" id="2_fjrip"]
+[ext_resource type="Texture2D" uid="uid://b6hnrx7l3x0ao" path="res://assets/罐子/四个角色.png" id="2_g2els"]
+[ext_resource type="Resource" uid="uid://d4g5pmu3lq7xw" path="res://game/entities/vase type/瓦罐.tres" id="3_smehm"]
+[ext_resource type="Resource" uid="uid://hyrnowrd62at" path="res://game/entities/vase type/玻璃罐.tres" id="4_ur7pv"]
+[ext_resource type="Resource" uid="uid://dolm1m5xh5ica" path="res://game/entities/vase type/石锅.tres" id="5_y4r1p"]
+[ext_resource type="Resource" uid="uid://wgsk4rkcocne" path="res://game/entities/vase type/自热饭盒.tres" id="6_d2wvv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
-radius = 92.0
-height = 262.0
+radius = 88.0
+height = 190.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("2_g2els")
+region = Rect2(20, 147, 58, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("2_g2els")
+region = Rect2(11, 80, 74, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("2_g2els")
+region = Rect2(4, 12, 90, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("2_g2els")
+region = Rect2(10, 49, 78, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvgk3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_onrkg")
+"texture": SubResource("AtlasTexture_fjrip")
 }],
-"loop": 1,
-"name": &"default",
+"loop": 0,
+"name": &"玻璃罐",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}],
+"loop": 0,
+"name": &"瓦罐",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}],
+"loop": 0,
+"name": &"石锅",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}],
+"loop": 0,
+"name": &"自热饭盒",
 "speed": 5.0
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=43300901 groups=["player"]]
 script = ExtResource("1_g2els")
+stage_datas = Array[ExtResource("2_fjrip")]([ExtResource("3_smehm"), ExtResource("4_ur7pv"), ExtResource("5_y4r1p"), ExtResource("6_d2wvv")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=71378785]
 shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=907142981]
-position = Vector2(-4, -28)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_kvgk3")
+animation = &"石锅"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2073023887]
 
