@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="PropType" format=3 uid="uid://6omxbvpghrdt"]
 
-[ext_resource type="Script" uid="uid://cgpxl65qohijv" path="res://game/systems/Buff_Type.gd" id="1_ge16y"]
+[ext_resource type="Script" uid="uid://cgpxl65qohijv" path="res://framework/resources/Buff_Type.gd" id="1_ge16y"]
 [ext_resource type="Resource" uid="uid://dhra16505oy88" path="res://game/entities/Buff/辣.tres" id="2_oktgk"]
-[ext_resource type="Script" uid="uid://r6nkmjh2lt8q" path="res://game/systems/Prop_Type.gd" id="2_te1oe"]
+[ext_resource type="Script" uid="uid://r6nkmjh2lt8q" path="res://framework/resources/Prop_Type.gd" id="2_te1oe"]
 
 [resource]
 script = ExtResource("2_te1oe")

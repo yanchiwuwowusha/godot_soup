@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SoupType" format=3 uid="uid://c88pr0h3u7b"]
 
-[ext_resource type="Script" uid="uid://dubm4bjo8po12" path="res://game/systems/Soup_Type.gd" id="1_ft306"]
+[ext_resource type="Script" uid="uid://dubm4bjo8po12" path="res://framework/resources/Soup_Type.gd" id="1_ft306"]
 
 [resource]
 script = ExtResource("1_ft306")
