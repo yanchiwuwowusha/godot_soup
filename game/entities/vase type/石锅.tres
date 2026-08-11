@@ -11,4 +11,5 @@ jump_velocity = 0.0
 max_hp = 200.0
 max_clarity = 200.0
 anim_name = "石锅"
+shape_name = "石锅shape"
 metadata/_custom_type_script = "uid://d25ebrvxhjqdf"

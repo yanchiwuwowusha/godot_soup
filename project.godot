@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="soup"
-run/main_scene="uid://drwtcquicu2nd"
+run/main_scene="uid://id15n3n84r3"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://Resources/icon.svg"
+
+[autoload]
+
+Data="*uid://c4r3hnbs1qwad"
 
 [display]
 

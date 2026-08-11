@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bovu06omqtqsx"]
+
+[ext_resource type="Script" uid="uid://buush8f85rbsa" path="res://耗子.gd" id="1_c538a"]
+[ext_resource type="Texture2D" uid="uid://cgol7jjttaktv" path="res://assets/portrait/穿山甲.png" id="2_c06eo"]
+[ext_resource type="AudioStream" uid="uid://o7q5ivxo28si" path="res://你说你有点难追sped.wav" id="3_c06eo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvgk3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c06eo")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wmwd2"]
+radius = 243.181
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fwh6c"]
+radius = 1976.8018
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=429730623]
+script = ExtResource("1_c538a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2011303518]
+sprite_frames = SubResource("SpriteFrames_kvgk3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=474672419]
+shape = SubResource("CircleShape2D_wmwd2")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=2007125088]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1753794278]
+shape = SubResource("CircleShape2D_fwh6c")
+
+[node name="ChaseMusic" type="AudioStreamPlayer" parent="." unique_id=709827007]
+stream = ExtResource("3_c06eo")

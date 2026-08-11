@@ -5,26 +5,28 @@
 [ext_resource type="PackedScene" uid="uid://cq8kn2eaeefat" path="res://黄豆.tscn" id="3_85g3d"]
 [ext_resource type="PackedScene" uid="uid://0gfngyfh1xen" path="res://菌菇.tscn" id="4_choun"]
 [ext_resource type="PackedScene" uid="uid://b7vfwtoaje8n8" path="res://劣质奶酪.tscn" id="5_ya4ey"]
-[ext_resource type="PackedScene" uid="uid://ccw11xj2qu2kn" path="res://change_stage.tscn" id="6_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://bovu06omqtqsx" path="res://耗子.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://b87yyiqdeltfr" path="res://scenes/player.tscn" id="7_trceg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvgk3"]
-size = Vector2(7439, 2100)
+size = Vector2(14439, 2100)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wmwd2"]
 normal = Vector2(-0.004304121, -0.9999907)
+distance = 121.32313
 
 [node name="main" type="Node2D" unique_id=1180419787]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1802548472]
+position = Vector2(-1788, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=983559629]
-scale = Vector2(57.859375, 16)
+scale = Vector2(112.55469, 16)
 texture = ExtResource("1_o6xl0")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1473110125]
-position = Vector2(3709.5, 1052)
+position = Vector2(7209.5, 1052)
 shape = SubResource("RectangleShape2D_kvgk3")
 
 [node name="辣椒油" parent="." unique_id=840195242 instance=ExtResource("2_tipki")]
@@ -39,8 +41,8 @@ position = Vector2(3382, -762)
 [node name="劣质奶酪" parent="." unique_id=2057732734 instance=ExtResource("5_ya4ey")]
 position = Vector2(4840, -733)
 
-[node name="切换罐子" parent="." unique_id=1942754116 instance=ExtResource("6_eb6dy")]
-position = Vector2(827, -134)
+[node name="耗子" parent="." unique_id=429730623 instance=ExtResource("7_o6xl0")]
+position = Vector2(7713, -234)
 
 [node name="player" parent="." unique_id=43300901 instance=ExtResource("7_trceg")]
 position = Vector2(310, -325)
@@ -49,5 +51,5 @@ position = Vector2(310, -325)
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=157761961]
-position = Vector2(591, 2274)
+position = Vector2(593, 2233)
 shape = SubResource("WorldBoundaryShape2D_wmwd2")

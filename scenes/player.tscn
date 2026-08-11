@@ -7,10 +7,7 @@
 [ext_resource type="Resource" uid="uid://hyrnowrd62at" path="res://game/entities/vase type/玻璃罐.tres" id="4_ur7pv"]
 [ext_resource type="Resource" uid="uid://dolm1m5xh5ica" path="res://game/entities/vase type/石锅.tres" id="5_y4r1p"]
 [ext_resource type="Resource" uid="uid://wgsk4rkcocne" path="res://game/entities/vase type/自热饭盒.tres" id="6_d2wvv"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
-radius = 88.0
-height = 190.0
+[ext_resource type="AudioStream" uid="uid://cj1gjw0i5wy44" path="res://你干嘛.wav" id="8_smehm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
 atlas = ExtResource("2_g2els")
@@ -20,13 +17,13 @@ region = Rect2(20, 147, 58, 57)
 atlas = ExtResource("2_g2els")
 region = Rect2(11, 80, 74, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
-atlas = ExtResource("2_g2els")
-region = Rect2(4, 12, 90, 35)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
 atlas = ExtResource("2_g2els")
 region = Rect2(10, 49, 78, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("2_g2els")
+region = Rect2(4, 12, 90, 35)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvgk3"]
 animations = [{
@@ -48,7 +45,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ur7pv")
+"texture": SubResource("AtlasTexture_y4r1p")
 }],
 "loop": 0,
 "name": &"石锅",
@@ -56,7 +53,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y4r1p")
+"texture": SubResource("AtlasTexture_ur7pv")
 }],
 "loop": 0,
 "name": &"自热饭盒",
@@ -67,14 +64,30 @@ animations = [{
 script = ExtResource("1_g2els")
 stage_datas = Array[ExtResource("2_fjrip")]([ExtResource("3_smehm"), ExtResource("4_ur7pv"), ExtResource("5_y4r1p"), ExtResource("6_d2wvv")])
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=71378785]
-shape = SubResource("CapsuleShape2D_onrkg")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=907142981]
-position = Vector2(0, -4.000002)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_kvgk3")
 animation = &"石锅"
+
+[node name="瓦罐shape" type="CollisionPolygon2D" parent="." unique_id=1053557601]
+visible = false
+polygon = PackedVector2Array(-20.86168, -100.833336, 21.315195, -101.66667, 114, -22, 40, 67, 44, 97, -38, 97, -37, 65, -114, -26)
+disabled = true
+
+[node name="自热饭盒shape" type="CollisionPolygon2D" parent="." unique_id=1693473534]
+visible = false
+polygon = PackedVector2Array(-68, -54, 70, -53, 141, -12, 46, 27, 42, 52, -45, 51, -53, 27, -137, -16)
+disabled = true
+
+[node name="石锅shape" type="CollisionPolygon2D" parent="." unique_id=2034952036]
+visible = false
+polygon = PackedVector2Array(-53, -45, 62, -43, 117, 2, 57, 33, 24, 42, -18, 42, -58, 31, -121, 1)
+disabled = true
+
+[node name="玻璃罐shape" type="CollisionPolygon2D" parent="." unique_id=1651122516]
+visible = false
+polygon = PackedVector2Array(-30, -85, 29, -85, 91, -1, 46, 25, 30, 84, -27, 83, -49, 25, -91, 1)
+disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2073023887]
 
@@ -97,3 +110,6 @@ theme_override_font_sizes/font_size = 50
 text = "Clarity"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HitSound" type="AudioStreamPlayer" parent="." unique_id=1107409449]
+stream = ExtResource("8_smehm")

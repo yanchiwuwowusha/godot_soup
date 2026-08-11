@@ -12,18 +12,38 @@ extends CharacterBody2D
 @export var max_hp:float = 100.0
 @export var clarity:float = 100.0
 @export var max_clarity:float = 100.0
+#击退状态
+var is_knocked_back: bool = false
+var knockback_timer: float = 0.0
+const KNOCKBACK_DURATION: float = 0.3
 
 
+@onready var hit_sound: AudioStreamPlayer = $HitSound
 @onready var hp_label: Label = $CanvasLayer/HPLabel
 @onready var clarity_label: Label = $CanvasLayer/ClarityLabel
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
-
+#罐子形状
+@onready var 自热饭盒shape: CollisionPolygon2D = $自热饭盒shape
+@onready var 瓦罐shape: CollisionPolygon2D = $瓦罐shape
+@onready var 石锅shape: CollisionPolygon2D = $石锅shape
+@onready var 玻璃罐shape: CollisionPolygon2D = $玻璃罐shape
 
 func _ready() -> void:
 	add_to_group("player")
 	hp_label.text = "HP: %d / %d" % [hp, max_hp]
 	clarity_label.text = "Clarity: %d / %d" % [clarity, max_clarity]
+	change_current_stage(Data.selected_stage)
+	update_display()
 func _physics_process(delta: float) -> void:
+	if is_knocked_back:
+		knockback_timer -= delta
+		velocity.y += gravity * delta   # 依然受重力影响
+		move_and_slide()
+		if knockback_timer <= 0.0 or is_on_floor():
+			is_knocked_back = false
+		return   # 跳过后续正常移动代码
+	
+	
 #重力
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -48,6 +68,7 @@ func change_current_stage(a: int) -> void:
 		print("错误：形态索引 %d 超出资源数组范围" % a)
 		return
 
+
 	var data: StageData = stage_datas[a]
 	acceleration = data.acceleration
 	max_speed = data.max_speed
@@ -61,11 +82,24 @@ func change_current_stage(a: int) -> void:
 
 	if anim and data.anim_name:
 		anim.play(data.anim_name)
+	for shape in get_children():
+		if shape is CollisionPolygon2D:
+			shape.disabled = true
+
+	# 启用指定的形状
+	if not data.shape_name.is_empty():
+		var target_shape = get_node_or_null(data.shape_name)
+		if target_shape is CollisionPolygon2D:
+			target_shape.disabled = false
+		else:
+			print("警告：未找到碰撞形状节点：", data.shape_name)
 	update_display()
 	print("切换到形态：", data.stage_name)
 
 func change_hp(a:float)->void:
 #更改血量
+	if a < -30:
+		hit_sound.play()
 	hp+=a
 	hp=min(max_clarity,hp)
 	hp=max(0,hp)
@@ -79,5 +113,12 @@ func change_clarity(a:float)->void:
 	clarity_label.text = "Clarity: %d / %d" % [clarity, max_clarity]
 
 func update_display()->void:
+#刷新
 	hp_label.text = "HP: %d / %d" % [hp, max_hp]
 	clarity_label.text = "Clarity: %d / %d" % [clarity, max_clarity]
+
+func apply_knockback(direction: Vector2, strength: float) -> void:
+#被击退
+	velocity = direction * strength
+	is_knocked_back = true
+	knockback_timer = KNOCKBACK_DURATION

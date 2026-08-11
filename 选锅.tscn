@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://id15n3n84r3"]
+
+[ext_resource type="Script" uid="uid://ce3bbotcvucnc" path="res://选锅.gd" id="1_kja56"]
+
+[node name="Control" type="Control" unique_id=1412630666]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kja56")
+
+[node name="Label" type="Label" parent="." unique_id=1328325146]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 168.0
+offset_right = 10.0
+offset_bottom = 237.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "选锅"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=548622287]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 420.0
+offset_right = 288.0
+offset_bottom = 496.0
+theme_override_font_sizes/font_size = 50
+text = "瓦罐"
+
+[node name="Button2" type="Button" parent="." unique_id=1992608816]
+layout_mode = 0
+offset_left = 556.0
+offset_top = 420.0
+offset_right = 728.0
+offset_bottom = 496.0
+theme_override_font_sizes/font_size = 50
+text = "玻璃罐"
+
+[node name="Button3" type="Button" parent="." unique_id=597366425]
+layout_mode = 0
+offset_left = 1032.0
+offset_top = 424.0
+offset_right = 1204.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 50
+text = "石锅"
+
+[node name="Button4" type="Button" parent="." unique_id=1041020191]
+layout_mode = 0
+offset_left = 1488.0
+offset_top = 420.0
+offset_right = 1660.0
+offset_bottom = 496.0
+theme_override_font_sizes/font_size = 50
+text = "自热饭盒"

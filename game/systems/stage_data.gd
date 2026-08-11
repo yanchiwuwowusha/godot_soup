@@ -8,3 +8,4 @@ class_name StageData
 @export var max_hp: float = 100.0
 @export var max_clarity: float = 100.0
 @export var anim_name: String = "default"
+@export var shape_name: String = "default"
