@@ -7,6 +7,10 @@ extends CharacterBody2D
 #状态   0：瓦罐   1：玻璃罐   2：石锅     3：自热饭盒
 @export var current_stage:int  = 0
 @export var stage_datas: Array[StageData] = []
+#汤底   
+var soup_base : int = 0
+#汤料
+var soup_incredients:int =0
 #生命与纯净度
 @export var hp :float= 100.0
 @export var max_hp:float = 100.0
@@ -33,6 +37,8 @@ func _ready() -> void:
 	hp_label.text = "HP: %d / %d" % [hp, max_hp]
 	clarity_label.text = "Clarity: %d / %d" % [clarity, max_clarity]
 	change_current_stage(Data.selected_stage)
+	change_soup_base(Data.selected_soup_base)
+	change_soup_incredients(Data.selected_soup_incredients)
 	update_display()
 func _physics_process(delta: float) -> void:
 	if is_knocked_back:
@@ -95,6 +101,11 @@ func change_current_stage(a: int) -> void:
 			print("警告：未找到碰撞形状节点：", data.shape_name)
 	update_display()
 	print("切换到形态：", data.stage_name)
+
+func change_soup_base(a:int)->void:
+	pass
+func change_soup_incredients(a:int)->void:
+	pass
 
 func change_hp(a:float)->void:
 #更改血量

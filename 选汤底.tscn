@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cm26lryn2rv36"]
+
+[ext_resource type="Script" uid="uid://dsedhujip6lqg" path="res://选汤底.gd" id="1_4wuen"]
+
+[node name="Control" type="Control" unique_id=1412630666]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4wuen")
+
+[node name="Label" type="Label" parent="." unique_id=1328325146]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 168.0
+offset_right = 10.0
+offset_bottom = 237.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "选汤底"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=548622287]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 424.0
+offset_right = 536.0
+offset_bottom = 501.0
+theme_override_font_sizes/font_size = 50
+text = "清鸡"
+
+[node name="Button2" type="Button" parent="." unique_id=1992608816]
+layout_mode = 0
+offset_left = 852.0
+offset_top = 428.0
+offset_right = 1024.0
+offset_bottom = 505.0
+theme_override_font_sizes/font_size = 50
+text = "南瓜"
+
+[node name="Button3" type="Button" parent="." unique_id=597366425]
+layout_mode = 0
+offset_left = 1380.0
+offset_top = 436.0
+offset_right = 1552.0
+offset_bottom = 513.0
+theme_override_font_sizes/font_size = 50
+text = "海鲜"

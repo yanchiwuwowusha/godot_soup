@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://n1b00kxetow1"]
+
+[ext_resource type="Script" uid="uid://dxlcqxmff62or" path="res://苍蝇.gd" id="1_w604m"]
+[ext_resource type="Texture2D" uid="uid://cgmdukcrwfwfm" path="res://09179d33d3de21827f523873557ec307.png" id="2_w604m"]
+[ext_resource type="AudioStream" uid="uid://o7q5ivxo28si" path="res://你说你有点难追sped.wav" id="3_1nc7u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0d5a"]
+atlas = ExtResource("2_w604m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nc7u"]
+atlas = ExtResource("2_w604m")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5k6a"]
+atlas = ExtResource("2_w604m")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcrtt"]
+atlas = ExtResource("2_w604m")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvgk3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0d5a")
+}],
+"loop": 1,
+"name": &"待机",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0d5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nc7u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5k6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcrtt")
+}],
+"loop": 1,
+"name": &"追击",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wmwd2"]
+radius = 243.181
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fwh6c"]
+radius = 1976.8018
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=429730623]
+script = ExtResource("1_w604m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2011303518]
+scale = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_kvgk3")
+animation = &"待机"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=474672419]
+shape = SubResource("CircleShape2D_wmwd2")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=2007125088]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1753794278]
+shape = SubResource("CircleShape2D_fwh6c")
+
+[node name="ChaseMusic" type="AudioStreamPlayer" parent="." unique_id=709827007]
+stream = ExtResource("3_1nc7u")

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b7vfwtoaje8n8" path="res://劣质奶酪.tscn" id="5_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://bovu06omqtqsx" path="res://耗子.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://b87yyiqdeltfr" path="res://scenes/player.tscn" id="7_trceg"]
+[ext_resource type="PackedScene" uid="uid://n1b00kxetow1" path="res://苍蝇.tscn" id="8_tipki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvgk3"]
 size = Vector2(14439, 2100)
@@ -53,3 +54,6 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=157761961]
 position = Vector2(593, 2233)
 shape = SubResource("WorldBoundaryShape2D_wmwd2")
+
+[node name="CharacterBody2D" parent="." unique_id=784289998 instance=ExtResource("8_tipki")]
+position = Vector2(-888, -611)
