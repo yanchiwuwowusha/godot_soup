@@ -20,7 +20,10 @@ var soup_incredients:int =0
 var is_knocked_back: bool = false
 var knockback_timer: float = 0.0
 const KNOCKBACK_DURATION: float = 0.3
-
+#子弹
+@export var bullet_scene: PackedScene         
+@export var fire_cooldown: float = 0.2         # 开火冷却时间
+var fire_timer: float = 0.0                    # 冷却计时器
 
 @onready var hit_sound: AudioStreamPlayer = $HitSound
 @onready var hp_label: Label = $CanvasLayer/HPLabel
@@ -64,8 +67,17 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
+#开火
+	if fire_timer > 0.0:
+		fire_timer -= delta
+
+  # 按下开火键
+	if Input.is_action_just_pressed("fire") and fire_timer <= 0.0:
+		_fire()
+		fire_timer = fire_cooldown
 
 	move_and_slide()
+	update_animation()
 
 func change_current_stage(a: int) -> void:
 #切换各种形态
@@ -86,8 +98,6 @@ func change_current_stage(a: int) -> void:
 	hp = min(hp, max_hp)
 	clarity = min(clarity, max_clarity)
 
-	if anim and data.anim_name:
-		anim.play(data.anim_name)
 	for shape in get_children():
 		if shape is CollisionPolygon2D:
 			shape.disabled = true
@@ -100,6 +110,7 @@ func change_current_stage(a: int) -> void:
 		else:
 			print("警告：未找到碰撞形状节点：", data.shape_name)
 	update_display()
+	update_animation()
 	print("切换到形态：", data.stage_name)
 
 func change_soup_base(a:int)->void:
@@ -112,7 +123,7 @@ func change_hp(a:float)->void:
 	if a < -30:
 		hit_sound.play()
 	hp+=a
-	hp=min(max_clarity,hp)
+	hp=min(max_hp,hp)
 	hp=max(0,hp)
 	hp_label.text = "HP: %d / %d" % [hp, max_hp]
 
@@ -133,3 +144,55 @@ func apply_knockback(direction: Vector2, strength: float) -> void:
 	velocity = direction * strength
 	is_knocked_back = true
 	knockback_timer = KNOCKBACK_DURATION
+
+func update_animation() -> void:
+	if anim == null:
+		return
+
+	if current_stage < 0 or current_stage >= stage_datas.size():
+		return
+
+	var data: StageData = stage_datas[current_stage]
+	var base_name: String = data.anim_name
+
+	if base_name.is_empty():
+		return
+
+	var target_anim: String = base_name
+
+	# 跳跃优先
+	if not is_on_floor():
+		target_anim = base_name + "跳"
+	# 地面移动
+	elif not is_zero_approx(velocity.x):
+		target_anim = base_name + "跑"
+		# 向左跑则水平翻转，向右跑则不变
+		anim.flip_h = velocity.x < 0.0
+	# 静止时保持原来的翻转状态，不额外修改
+
+	# 避免重复播放同一动画
+	if anim.animation != target_anim:
+		anim.play(target_anim)
+
+func _fire() -> void:
+	if bullet_scene == null:
+		print("错误：未设置子弹场景")
+		return
+
+	var bullet = bullet_scene.instantiate()
+	get_parent().add_child(bullet)
+
+	# 设置子弹出生位置在主角前方一点
+	var spawn_offset = Vector2(200, -80)  # 可调整偏移量
+	var facing = 1.0
+	if anim.flip_h:   # 动画水平翻转时面向左
+		facing = -1.0
+
+	bullet.global_position = global_position + Vector2(spawn_offset.x * facing, spawn_offset.y)
+
+	# 设置子弹速度方向
+	if bullet.has_method("set_velocity"):
+		bullet.set_velocity(Vector2(bullet.speed * facing, 0))
+	else:
+		# 如果子弹脚本中没有 set_velocity，可以直接修改 velocity
+		bullet.velocity = Vector2(bullet.speed * facing, 0)

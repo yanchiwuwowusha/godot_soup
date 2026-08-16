@@ -12,23 +12,40 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvgk3"]
 size = Vector2(14439, 2100)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmwd2"]
+size = Vector2(380.5, 377)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wmwd2"]
 normal = Vector2(-0.004304121, -0.9999907)
 distance = 121.32313
 
 [node name="main" type="Node2D" unique_id=1180419787]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1802548472]
+[node name="地" type="StaticBody2D" parent="." unique_id=227268458]
 position = Vector2(-1788, 0)
+collision_mask = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=983559629]
+[node name="Sprite2D" type="Sprite2D" parent="地" unique_id=983559629]
 scale = Vector2(112.55469, 16)
 texture = ExtResource("1_o6xl0")
 centered = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1473110125]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="地" unique_id=1473110125]
 position = Vector2(7209.5, 1052)
 shape = SubResource("RectangleShape2D_kvgk3")
+
+[node name="墙" type="StaticBody2D" parent="." unique_id=1726300127]
+position = Vector2(-896, -50)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="墙" unique_id=2125082084]
+position = Vector2(-55, -128)
+scale = Vector2(3, 3)
+texture = ExtResource("1_o6xl0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="墙" unique_id=1053486314]
+position = Vector2(-58.75, -134.5)
+shape = SubResource("RectangleShape2D_wmwd2")
 
 [node name="辣椒油" parent="." unique_id=840195242 instance=ExtResource("2_tipki")]
 position = Vector2(961, -477)
@@ -43,17 +60,24 @@ position = Vector2(3382, -762)
 position = Vector2(4840, -733)
 
 [node name="耗子" parent="." unique_id=429730623 instance=ExtResource("7_o6xl0")]
-position = Vector2(7713, -234)
+position = Vector2(7768, -110)
+speed = null
+damage = null
+knockback_strength = null
+chase_duration = null
+hp = null
+max_hp = null
+
+[node name="苍蝇" parent="." unique_id=784289998 instance=ExtResource("8_tipki")]
+position = Vector2(-405, -122)
 
 [node name="player" parent="." unique_id=43300901 instance=ExtResource("7_trceg")]
 position = Vector2(310, -325)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1449686519]
+collision_mask = 0
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=157761961]
 position = Vector2(593, 2233)
 shape = SubResource("WorldBoundaryShape2D_wmwd2")
-
-[node name="CharacterBody2D" parent="." unique_id=784289998 instance=ExtResource("8_tipki")]
-position = Vector2(-888, -611)
