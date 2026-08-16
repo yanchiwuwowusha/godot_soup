@@ -361,28 +361,34 @@ stage_datas = Array[ExtResource("2_fjrip")]([ExtResource("3_smehm"), ExtResource
 bullet_scene = ExtResource("7_jej6c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=907142981]
-scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_kvgk3")
-animation = &"瓦罐"
+animation = &"玻璃罐"
 
 [node name="瓦罐shape" type="CollisionPolygon2D" parent="." unique_id=1053557601]
-position = Vector2(3, 25)
+visible = false
+position = Vector2(-1, 8)
+scale = Vector2(0.36263877, 0.328599)
 polygon = PackedVector2Array(-20.86168, -100.833336, 21.315195, -101.66667, 114, -22, 40, 67, 44, 97, -38, 97, -37, 65, -114, -26)
 disabled = true
 
 [node name="自热饭盒shape" type="CollisionPolygon2D" parent="." unique_id=1693473534]
 visible = false
-position = Vector2(-3, 68)
+position = Vector2(1.000001, 21)
+scale = Vector2(0.35387924, 0.35387927)
 polygon = PackedVector2Array(-68, -54, 70, -53, 141, -12, 46, 27, 42, 52, -45, 51, -53, 27, -137, -16)
 disabled = true
 
 [node name="石锅shape" type="CollisionPolygon2D" parent="." unique_id=2034952036]
 visible = false
+position = Vector2(-1.0000001, -0.9999999)
+scale = Vector2(0.36861652, 0.36861652)
 polygon = PackedVector2Array(-53, -45, 62, -43, 117, 2, 57, 33, 24, 42, -18, 42, -58, 31, -121, 1)
 disabled = true
 
 [node name="玻璃罐shape" type="CollisionPolygon2D" parent="." unique_id=1651122516]
 visible = false
+position = Vector2(-0.99999905, 1.9073486e-06)
+scale = Vector2(0.32789186, 0.32789183)
 polygon = PackedVector2Array(-30, -85, 29, -85, 91, -1, 46, 25, 30, 84, -27, 83, -49, 25, -91, 1)
 disabled = true
 

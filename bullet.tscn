@@ -203,7 +203,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wmwd2"]
-radius = 22.022715
+radius = 7.2111025
 
 [node name="Bullet" type="CharacterBody2D" unique_id=1608906736 groups=["bullet"]]
 collision_layer = 8
@@ -211,7 +211,6 @@ collision_mask = 5
 script = ExtResource("1_b7duk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1129870737]
-scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_kvgk3")
 animation = &"飞"
 

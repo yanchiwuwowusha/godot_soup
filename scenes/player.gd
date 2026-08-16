@@ -183,7 +183,7 @@ func _fire() -> void:
 	get_parent().add_child(bullet)
 
 	# 设置子弹出生位置在主角前方一点
-	var spawn_offset = Vector2(200, -80)  # 可调整偏移量
+	var spawn_offset = Vector2(50, -20)  # 可调整偏移量
 	var facing = 1.0
 	if anim.flip_h:   # 动画水平翻转时面向左
 		facing = -1.0

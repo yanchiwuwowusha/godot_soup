@@ -60,7 +60,7 @@ position = Vector2(3382, -762)
 position = Vector2(4840, -733)
 
 [node name="耗子" parent="." unique_id=429730623 instance=ExtResource("7_o6xl0")]
-position = Vector2(7768, -110)
+position = Vector2(7789, -22)
 speed = null
 damage = null
 knockback_strength = null
