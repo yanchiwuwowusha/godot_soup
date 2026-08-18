@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://btqa11wygdwmy" path="res://624becc2d712fb13a9dd1af154d99035.png" id="8_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://bv8viyem2effo" path="res://f9ac9443010f454871d649e18c3da61b.png" id="9_jej6c"]
 [ext_resource type="Texture2D" uid="uid://byftcl21e267p" path="res://6a7166e0d9825a85c6d276403a04b6be.png" id="10_f1ej7"]
+[ext_resource type="Texture2D" uid="uid://2japxelcbvcn" path="res://assets/罐子/1.png" id="2_onrkg"]
+[ext_resource type="Resource" uid="uid://c88pr0h3u7b" path="res://game/entities/Soup/胡辣汤.tres" id="2_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
 atlas = ExtResource("2_g2els")
@@ -359,6 +361,10 @@ collision_layer = 2
 script = ExtResource("1_g2els")
 stage_datas = Array[ExtResource("2_fjrip")]([ExtResource("3_smehm"), ExtResource("4_ur7pv"), ExtResource("5_y4r1p"), ExtResource("6_d2wvv")])
 bullet_scene = ExtResource("7_jej6c")
+soup_type = ExtResource("2_qhqgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=71378785]
+shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=907142981]
 sprite_frames = SubResource("SpriteFrames_kvgk3")
@@ -397,18 +403,40 @@ disabled = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1410867755]
 
 [node name="HPLabel" type="Label" parent="CanvasLayer" unique_id=2049199406]
-offset_left = -4.0
-offset_top = 125.0
-offset_right = 241.0
-offset_bottom = 224.0
+offset_left = -457.0
+offset_top = 338.0
+offset_right = -212.0
+offset_bottom = 437.0
 theme_override_font_sizes/font_size = 50
 text = "HP"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="OilLabel" type="Label" parent="CanvasLayer" unique_id=1803631707]
+offset_left = -497.0
+offset_top = -207.0
+offset_right = -260.0
+offset_bottom = -123.0
+theme_override_font_sizes/font_size = 50
+text = "Oil"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WaterLabel" type="Label" parent="CanvasLayer" unique_id=426307916]
+offset_left = -451.0
+offset_top = -278.0
+offset_right = -214.0
+offset_bottom = -194.0
+theme_override_font_sizes/font_size = 50
+text = "Water"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ClarityLabel" type="Label" parent="CanvasLayer" unique_id=1927889800]
-offset_right = 237.0
-offset_bottom = 84.0
+offset_left = -466.0
+offset_top = 165.0
+offset_right = -229.0
+offset_bottom = 249.0
 theme_override_font_sizes/font_size = 50
 text = "Clarity"
 horizontal_alignment = 1
@@ -416,3 +444,62 @@ vertical_alignment = 1
 
 [node name="HitSound" type="AudioStreamPlayer" parent="." unique_id=1107409449]
 stream = ExtResource("8_smehm")
+[node name="Spiciness" type="Label" parent="CanvasLayer" unique_id=877971267]
+offset_left = -424.0
+offset_top = 16.0
+offset_right = -187.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 50
+text = "Spiciness"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Temperature" type="Label" parent="CanvasLayer" unique_id=1687668454]
+offset_left = -416.0
+offset_top = -355.0
+offset_right = -99.0
+offset_bottom = -271.0
+theme_override_font_sizes/font_size = 50
+text = "Temperature"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Salt" type="Label" parent="CanvasLayer" unique_id=1220076600]
+offset_left = -484.0
+offset_top = -441.0
+offset_right = -247.0
+offset_bottom = -357.0
+theme_override_font_sizes/font_size = 50
+text = "Salt"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sauce" type="Label" parent="CanvasLayer" unique_id=902342254]
+offset_left = -458.0
+offset_top = -142.0
+offset_right = -221.0
+offset_bottom = -58.0
+theme_override_font_sizes/font_size = 50
+text = "Sauce"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sugar" type="Label" parent="CanvasLayer" unique_id=1824299344]
+offset_left = -459.0
+offset_top = -64.0
+offset_right = -222.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 50
+text = "Sugar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Savory" type="Label" parent="CanvasLayer" unique_id=835565881]
+offset_left = -456.0
+offset_top = 87.0
+offset_right = -219.0
+offset_bottom = 171.0
+theme_override_font_sizes/font_size = 50
+text = "Savory"
+horizontal_alignment = 1
+vertical_alignment = 1

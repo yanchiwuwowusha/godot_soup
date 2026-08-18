@@ -8,36 +8,48 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -111.5
-offset_top = -33.0
-offset_right = 111.5
-offset_bottom = 33.0
+offset_left = -176.0
+offset_top = -228.0
+offset_right = 177.0
+offset_bottom = 228.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_bnttg")
 
-[node name="play" type="Button" parent="." unique_id=617854451]
+[node name="settings" type="Control" parent="." unique_id=1858788297]
+layout_mode = 2
+
+[node name="credits" type="Control" parent="." unique_id=223847231]
+layout_mode = 2
+
+[node name="quit" type="Control" parent="." unique_id=2068565831]
+layout_mode = 2
+
+[node name="play" type="Control" parent="." unique_id=1449960435]
+layout_mode = 2
+
+[node name="quit2" type="Button" parent="." unique_id=426631333]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 75
+text = "QUIT"
+
+[node name="play2" type="Button" parent="." unique_id=617854451]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 75
 text = "PLAY"
 
-[node name="settings" type="Button" parent="." unique_id=1637022715]
+[node name="settings2" type="Button" parent="." unique_id=1637022715]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 75
 text = "SETTINGS"
 
-[node name="credits" type="Button" parent="." unique_id=753915919]
+[node name="credits2" type="Button" parent="." unique_id=753915919]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 75
 text = "CREDITS"
-
-[node name="quit" type="Button" parent="." unique_id=426631333]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 75
-text = "QUIT"
