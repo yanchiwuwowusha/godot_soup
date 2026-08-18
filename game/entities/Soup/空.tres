@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SoupType" format=3 uid="uid://dnaaa2jhst0gc"]
+
+[ext_resource type="Script" uid="uid://dubm4bjo8po12" path="res://framework/resources/Soup_Type.gd" id="1_r411l"]
+
+[resource]
+script = ExtResource("1_r411l")
+name = &"空无一物"
+metadata/_custom_type_script = "uid://dubm4bjo8po12"

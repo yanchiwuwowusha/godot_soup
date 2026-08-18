@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BuffType" format=3 uid="uid://dhra16505oy88"]
+
+[ext_resource type="Texture2D" uid="uid://drpvsgnix2083" path="res://assets/portrait/乐哥.png" id="1_07cig"]
+[ext_resource type="Script" uid="uid://cgpxl65qohijv" path="res://framework/resources/Buff_Type.gd" id="1_k47a0"]
+[ext_resource type="Script" uid="uid://dcajk2cj1dplc" path="res://game/entities/Buff/辣.gd" id="2_m4gcx"]
+
+[resource]
+script = ExtResource("1_k47a0")
+BuffIcon = ExtResource("1_07cig")
+BuffTime = 15.0
+BuffLogic = ExtResource("2_m4gcx")
+metadata/_custom_type_script = "uid://cgpxl65qohijv"

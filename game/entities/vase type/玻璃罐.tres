@@ -11,4 +11,5 @@ jump_velocity = -2000.0
 max_hp = 50.0
 max_clarity = 50.0
 anim_name = "玻璃罐"
+shape_name = "玻璃罐shape"
 metadata/_custom_type_script = "uid://d25ebrvxhjqdf"

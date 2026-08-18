@@ -6,4 +6,5 @@
 script = ExtResource("1_3uv1m")
 stage_name = "自热饭盒"
 anim_name = "自热饭盒"
+shape_name = "自热饭盒shape"
 metadata/_custom_type_script = "uid://d25ebrvxhjqdf"

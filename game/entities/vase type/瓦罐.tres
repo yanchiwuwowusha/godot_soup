@@ -6,4 +6,5 @@
 script = ExtResource("1_3ceur")
 stage_name = "瓦罐"
 anim_name = "瓦罐"
+shape_name = "瓦罐shape"
 metadata/_custom_type_script = "uid://d25ebrvxhjqdf"
