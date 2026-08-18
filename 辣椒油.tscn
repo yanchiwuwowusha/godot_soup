@@ -7,6 +7,8 @@
 size = Vector2(327, 408)
 
 [node name="Area2D" type="Area2D" unique_id=840195242]
+collision_layer = 16
+collision_mask = 2
 script = ExtResource("1_nvyjb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=468511896]
